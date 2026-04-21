@@ -1,0 +1,161 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Pro | Inversiones Inteligentes</title>
+    <style>
+        :root {
+            --primario: #0a192f;
+            --secundario: #172a45;
+            --acento: #64ffda;
+            --texto: #ccd6f6;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: var(--primario);
+            color: var(--texto);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- WIDGET CINTA DE PRECIOS --- */
+        .tradingview-widget-container {
+            width: 100%;
+            background: #000;
+        }
+
+        header {
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 25, 47, 0.95);
+            border-bottom: 1px solid var(--secundario);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--acento); }
+        nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-size: 0.9rem; }
+
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            background: radial-gradient(circle at center, #172a45 0%, #0a192f 100%);
+        }
+
+        .hero h1 { font-size: 3rem; color: var(--blanco); margin-bottom: 20px; }
+
+        /* --- CONTENEDOR DE WIDGET ANALISIS --- */
+        .market-analysis {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .widget-box {
+            background: var(--secundario);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .info-text {
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            margin-top: 25px;
+            border: 1px solid var(--acento);
+            color: var(--acento);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .btn-cta:hover { background: rgba(100, 255, 218, 0.1); }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid var(--secundario); margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+        "symbols": [
+            { "proName": "FX_IDC:EURUSD", "title": "EUR/USD" },
+            { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
+            { "proName": "BITSTAMP:ETHUSD", "title": "Ethereum" },
+            { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500" },
+            { "proName": "OANDA:XAUUSD", "title": "Oro" }
+        ],
+        "showSymbolLogo": true,
+        "colorTheme": "dark",
+        "isTransparent": false,
+        "displayMode": "adaptive",
+        "locale": "es"
+        }
+        </script>
+    </div>
+
+    <header>
+        <div class="logo">MDINVESTMENT</div>
+        <nav>
+            <a href="#">Mercados</a>
+            <a href="#">Estrategias</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Maximiza tus Inversiones</h1>
+        <p>Análisis técnico avanzado y ejecución precisa en los mercados financieros.</p>
+    </section>
+
+    <section class="market-analysis">
+        <div class="info-text">
+            <h2 style="color: var(--blanco);">Análisis en Tiempo Real</h2>
+            <p>Utilizamos algoritmos de última generación para identificar las mejores oportunidades de entrada y salida.</p>
+            <p>Nuestra plataforma te permite visualizar la tendencia del mercado de forma instantánea, ayudándote a tomar decisiones informadas.</p>
+            <a href="#" class="btn-cta">Abrir Cuenta de Inversión</a>
+        </div>
+
+        <div class="widget-box">
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                {
+                "interval": "1m",
+                "width": 350,
+                "isTransparent": false,
+                "height": 380,
+                "symbol": "BITSTAMP:BTCUSD",
+                "showIntervalTabs": true,
+                "locale": "es",
+                "colorTheme": "dark"
+                }
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Trading System. Datos en tiempo real por TradingView.</p>
+        <p style="color: #666; font-size: 12px; max-width: 800px; margin: 0 auto;">
+            Aviso legal: Las inversiones en mercados financieros conllevan riesgos. Los resultados pasados no garantizan rendimientos futuros.
+        </p>
+    </footer>
+
+</body>
+</html>
